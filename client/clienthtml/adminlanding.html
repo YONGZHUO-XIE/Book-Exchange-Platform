@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Book exchanging app</title>
+    <link rel="stylesheet" type="text/css" href="../clientcss/adminlanding.css">
+  </head>
+  <body onload="loadInfo()">
+    <div id="overlay"></div>
+    <div id="header">
+        <p>Welcome to admin page</p>
+        <div class="container">
+            <label>
+                <input type="checkbox" id="mode" hidden checked onchange="changeOp(this)">
+                <span></span>
+                <i class="indicator"></i>
+            </label>
+        </div>
+        <div id="modenote">Edit post information</div>
+        <div class="editweekly">
+          <input type="button" id="weeklypopup" onclick="changeWeekly()" value="Edit weekly recommendation">
+        </div>
+    </div>
+
+    <div id="columns">
+
+        <div id="left" class="column">
+            <h3>Report recieved</h3>
+            <li class="reportList">
+
+            </li>                    
+        </div>
+
+        <div id="center" class="column">
+        </div>
+
+        <div id="center-user" class="column">
+        </div>
+    </div>
+
+    
+    <div id="post-detail">
+        <div id="post-container">
+        </div>
+        <button type="button" class="btn-delete" onclick="removePost()">
+            Delete Post
+          </button>
+        <button type="button" class="btn-cancel" onclick="closeWindow()">
+            Close
+          </button>
+    </div>
+
+    <div id="user-detail">
+      <div id="user-container">
+      </div>
+      <button type="button" id="blockbtn"class="btn-delete" onclick="blockUser()">
+      </button>
+      <button type="button" class="btn-cancel" onclick="closeWindow()">
+          Close
+      </button>
+    </div>
+
+    <div id="report-detail">
+      <div id="report-container">
+      </div>
+      <button type="button" class="btn-delete" onclick="handleReport()">
+        Resolved
+        </button>
+      <button type="button" class="btn-cancel" onclick="closeWindow()">
+        Close
+      </button>
+    </div>
+
+    <div id="weekly-detail">
+      <div id="weekly-container">
+        <label class="weeklylabel">add a new book:</label>
+        <br>
+        <label class="weeklylabel">enter book name: </label>
+        <input type="text" id="newRec" placeholder="new bookname">
+        <br>
+        <label class="weeklylabel">add a picture(remember to click upload before change): </label>
+        <form id="fileupload" onsubmit="fileSubmitHandler(event)">
+          <input type="file" name="file" id="input" onchange="fileSelectedHandler(event)">
+          <input type="submit" value="Upload"/>
+        </form>
+        <label class="weeklylabel">add some description</label>
+        <input type="text" id="newDes" placeholder="new bookname">
+        <br>
+        <label class="weeklylabel">or select from previous book:</label>
+        <select name="books" id="weeklyselect">
+          <option value="undefined"> </option>
+        </select>
+      </div>
+      <br>
+      <button type="button" class="btn-delete" onclick="submitChange()">
+        Change
+        </button>
+      <button type="button" class="btn-cancel" onclick="closeWindow()">
+        Close
+      </button>
+    </div>
+
+    <script type="text/javascript" src="../actions/actionUser.js"></script>
+    <script type="text/javascript" src="../actions/actionBook.js"></script>
+    <script type="text/javascript" src="../actions/actionPost.js"></script>
+    <script type="text/javascript" src="../actions/actionReport.js"></script>
+    <script type="text/javascript" src="../actions/actionImage.js"></script>
+    <script type="text/javascript" src="../clientjs/admin.js"></script>
+  </body>
+</html>

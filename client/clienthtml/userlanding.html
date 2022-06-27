@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Book exchanging app</title>
+    <link rel="stylesheet" type="text/css" href="../clientcss/userlanding.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+      <div id="bannerGradient" class="relative">
+          <span class="bannerText">
+            Welcome to BookExchange
+          </span>
+          <div id='searchContainer'>
+            <input id='postName' type="text" placeholder="Search Post">
+            <button id="searchAllBtn" class="fa fa-search" onclick="searchDisplay()"></button>
+          </div>
+      </div>
+
+      <!--Account Indicator and Recommandation-->
+      <div id="accountSection">
+        
+        <!--Account Header-->
+        <div class='accountIndicator'>
+
+          <div class="accountIconContainer">
+            <img id="accountProfileIcon" class="accountIcon" src="">
+          </div>
+
+          <div class="accountSwitchButton"  onclick="logout()">
+            Switch Account
+          </div>
+
+        </div>
+
+        <div class="recText">
+          Your Recommendations
+        </div>
+
+        <!--Recommendations-->
+        <div class="recLists">
+          <!--First Recommedation-->
+          <div class='recommedation'>
+
+            <div class="recBookIconContainer">
+              <img class="recBookIcon" src="../../img/SBGIMG.svg">
+            </div>
+
+            <div class="recMoreInfo">
+                add favor type to get recommed<br>
+            </div>
+          </div>
+
+          <!--Second Recommedation-->
+          <div class='recommedation'>
+
+            <div class="recBookIconContainer">
+              <img class="recBookIcon" src="../../img/SBGIMG.svg">
+            </div>
+
+            <div class="recMoreInfo">
+              add favor type to get recommed
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--Main Info Section-->
+       	<!-- The Timeline Section -->
+ 	<div id='mainInfo'>
+
+        <div class='mainInfoTabs'>
+            <ul>
+                <li class="aLi"><button class="fa fa-home tab" id="a" onclick="changeTab(event, 'MyPostPage')"></button></li>
+                <li class="bLi"><button class="fa fa-compass tab active" id="b" onclick="changeTab(event, 'ExplorePage')"></button></li>
+                <li class="cLi"><button class="fa fa-envelope tab" id="c" onclick="changeTab(event, 'RequestPage')"><abutton></li>
+                <li class="dLi"><button class="fa fa-plus tab" id="d" onclick="changeTab(event, 'NewPostPage');"><abutton></li>
+            </ul>
+        </div>
+
+    <!-- MyPost Page -->
+    <div id="MyPostPage" class="tabContent">
+
+    </div>
+
+    <!-- Explore Page -->
+    <div id="ExplorePage" class="tabContent">
+      
+    </div>
+
+    <!-- Request Page -->
+    <div id="RequestPage" class="tabContent">
+      <!-- first request
+      <div class="request">
+        <div class="userIconContainer" style="float: left;">
+          <img class="accountIconPost" src="../../img/user1.jpg" style="border-radius: 50%;">
+        </div>
+        <div class="userAccountName" style="float:left">
+          user1 wants to use A in exchange for B
+        </div>
+        <div class="buttonContainer" style="float: right;">
+          <div>
+            <button class="requestAction" id="acceptRequestBtn" onclick="">Accept</button>
+          </div>
+          <div>
+            <button class="requestAction" id="declineRequestBtn" onclick="">Decline</button>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- New Post Page -->
+    <div id="NewPostPage" class="tabContent">
+
+      <div class="form-container">
+        <div id="sCancelBtnContainer">
+          <button id="cancelBtn" onclick="closePopUp()">X</button>
+        </div>
+        <h1
+          style="
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 60px;
+          "
+        >
+          New Post
+        </h1>
+
+        <div class="srcPostTitleClass">
+          <input type="text" placeholder="Title of post" id="srcPostTitle" />
+        </div>
+        <div class="srcDescriptionClass">
+          <input type="text" placeholder="Enter Post Description" id="srcDescription"/>
+        </div>
+        <h3 class="srcContentPictureClass">add a picture(remember to click upload before change): </h3>
+        <form class="srcContentPictureClass" id="fileupload" onsubmit="fileSubmitHandler(event)">
+          <input type="file" name="file" id="input" onchange="fileSelectedHandler(event)">
+          <input type="submit" value="Upload"/>
+        </form>
+
+        <!--choose a book-->
+        <div class="chooseBkPrompt">
+          <h3>
+            choose an existing book
+          </h3>
+        </div>
+
+        <div class="selector">
+          <div id="selField" onclick="openDropdown(event)">
+            <p id="selectText">Select a book</p>
+            <img src="../../img/arrow.png">
+          </div>
+          <!--dropdown list for all available books-->
+          <ul id="bookDropdown">
+          </ul>
+        </div>
+
+        <div id="postBtn">
+          <button type="submit" class="sBtn" onclick="addNewpost()">
+            Post
+          </button>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- New Add book Page -->
+    <!-- class="tabContent" -->
+    <div id="NewBookPage">
+      <div class="form-container">
+        <div id="sCancelBtnContainer"><button id="cancelBtn" onclick="closeAddBookPopUp()">X</button></div>
+        <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif; margin-top: 60px;">New Book</h1>
+        <div class="srcBookNameClass">
+          <input type="text" placeholder="Book Name" id="srcBookName" />
+        </div>
+        <div class="srcBookAuthorClass">
+          <input type="text" placeholder="Author's Name" id="srcBookAuthor"/>
+        </div>
+        <div class="srcBookTagClass">
+          <input type="text" placeholder="Enter a Book Tag (Seperate your tag by ,)" id="srcBookTag"/>
+        </div>
+        <div id="postBtn">
+          <button type="submit" class="sBtn" onclick="addNewBook()">
+            submit
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+   </div>
+
+      <img id="profilePicCircle" src="" class="absolute" onclick="openUserProfile()">
+      <div id="userProfile">
+        <div id="banner"> <!-- Just holds the banner image, don't need to style this div. -->
+
+          <!-- Banner image goes in here -->
+          <img id="bannerPic" src="">
+          
+     
+        </div>
+        <!-- Profile Card Imgage -->
+        <img id="profileCardPic" src="" class="absolute">
+
+        <div class="profileCardNameClass">
+          <span id="profileCardName">Mollis Stewart</span>
+        </div>
+
+        <div class="profileCardEmailClass">
+          <span id="user_email" class="fa fa-envelope">   mollis@mail.utoronto.ca</span>
+        </div>
+
+        <div class="profileCardContactNumClass">
+          <span id="user_phonenum" class="fa fa-phone">   +1 888-663-3279</span>
+        </div>
+
+        <div class="profileCardContactNumClass">
+          Type of book you are intrested in:
+          <ul id="userfavor">
+          </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <!-- <div class='socialMediaLinks'>
+          <ul>
+            <li class="liFA"><button class="fa fa-facebook-f" id="a" onclick="changeTab(event, 'MyPostPage')"></button></li>
+            <li class="liINS"><button class="fa fa-instagram" id="b" onclick="changeTab(event, 'ExplorePage')"></button></li>
+            <li class="liTwt"><button class="fa fa-twitter tab" id="e" onclick="changeTab(event, 'RequestPage')"><abutton></li>
+          </ul>
+        </div> -->
+        <label class="change">change icon(remember to click upload before change): </label>
+        <form class="change" onsubmit="fileSubmitHandler(event)">
+          <input type="file" name="file" id="fileinput" onchange="fileSelectedHandler(event)">
+          <input type="submit" value="Upload"/>
+        </form>
+        
+        <div>
+          <input type="button" class="addNewBook" onclick="displayAddBook()" value="add a new book"/>
+        </div>
+
+        <div>
+          <input type="button" class="changeinfo" onclick="changeInfo()" value="complete/change my info"/>
+        </div>
+
+        <br><br>
+        <input type="text" class="change" placeholder="enter new email" id="newEmail"/>
+        <input type="text" class="change" placeholder="enter new phonenum" id="newPhonenum"/>
+        <input type="text" class="change" placeholder="enter your favortypes of book(Seperate your tag by ,)" id="favortype"/>
+        <input type="button" id="submitBtn" onclick="submitchange();setTimeout(() => {changeProfilePicture(event)}, 500);" value="confirm change"/>
+
+
+        <button id="logOutBtn" onclick="logout()">Log Out</button>
+        <button id="closeBtn" onclick="closeProfile()">X</button>
+
+      </div>
+    
+    <script type="text/javascript" src="../actions/actionUser.js"></script>
+    <script type="text/javascript" src="../actions/actionBook.js"></script>
+    <script type="text/javascript" src="../actions/actionPost.js"></script>
+    <script type="text/javascript" src="../actions/actionImage.js"></script>
+    <script type="text/javascript" src="../actions/actionRequest.js"></script>
+    <script type="text/javascript" src="../clientjs/userlanding.js"></script>
+    <script type="text/javascript" src="../actions/actionReport.js"></script>
+  </body>
+</html>

@@ -1,0 +1,381 @@
+body {
+  /*
+    margin: auto 10px;
+    width: auto;
+    height: 100vh; */
+  background-image: url(../img/SBGIMG.svg);
+  background-size: 1700px 950px;
+  /*linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)*/
+}
+
+#siteHeader {
+  width: fit-content;
+  height: fit-content;
+}
+
+#menuHeader {
+  width: fit-content;
+  height: fit-content;
+}
+
+#siteTile {
+  top: 200px;
+  font-size: 100pt;
+  font-weight: bolder;
+  font-style: oblique;
+  font-family: sans-serif;
+}
+
+#siteFootnote {
+  margin-top: 90px;
+  font-size: 37pt;
+  font-weight: bold;
+  font-style: oblique;
+  font-family: sans-serif;
+}
+
+#menuPrompt {
+  margin-top: 210px;
+  margin-left: 245px;
+  font-size: 18pt;
+  font-weight: 400;
+  font-style: oblique;
+  font-family: sans-serif;
+}
+
+#AnonIcon {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  top: 50px;
+  right: 150px;
+  text-align: center;
+  color: white;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  border-radius: 25px;
+  /* border: 5px solid rgb(12, 182, 212); */
+  border: none;
+}
+#AnonIcon:hover {
+  /* border-color:#8fd3f4; */
+  background-color: #262626;
+}
+
+#iconText {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+}
+
+.form-popup {
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  z-index: 9;
+  border-radius: 25px;
+}
+
+.menu-popup {
+  display: none;
+  position: absolute;
+  z-index: 9;
+}
+
+#searchBooksBtn {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 20pt;
+  color: #8f8f8f;
+  cursor: pointer;
+}
+
+.menu-container {
+  width: 700px;
+  height: 100vh;
+  padding: 20px;
+  position: absolute;
+  margin-top: -500px;
+  margin-left: 750px;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  border-radius: 25px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.form-container {
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  position: relative;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#searchContainer {
+  margin-top: 40px;
+}
+#searchBox {
+  height: 50px;
+  width: 500px;
+  border: none;
+  border-radius: 25px;
+  margin-left: -280px;
+  background-color: white;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 75%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  border-radius: 15px;
+  background: #eef0f6;
+}
+
+#username {
+  margin-top: 30px;
+  margin-left: 15%;
+}
+
+#password {
+  margin-top: 15px;
+  margin-left: 15%;
+}
+
+#conPassword {
+  margin-top: 15px;
+  margin-left: 15%;
+}
+
+#signUpPrompt {
+  margin-top: 160px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  text-align: center;
+}
+
+#cancelBtnContainer {
+  position: absolute;
+  margin-top: -470px;
+  margin-left: 30px;
+}
+
+#sCancelBtnContainer {
+  position: absolute;
+  margin-top: -379px;
+  margin-left: 30px;
+}
+
+#menuEntrance {
+  position: absolute;
+  margin-top: -410px;
+  margin-left: 1400px;
+}
+
+#menuCancelBtnContainer {
+  position: absolute;
+  margin-top: -150px;
+  margin-left: 30px;
+}
+
+#menuEnterBtn {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border: none;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: large;
+  color: white;
+}
+
+#cancelBtn {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  border-color: black;
+  font-weight: bold;
+  font-size: large;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: rgb(202, 202, 202);
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  position: absolute;
+  background-color: #3651e4;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  height: auto;
+  width: 67%;
+  margin-left: 15%;
+  margin-top: -150px;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+.form-container .sBtn {
+  position: absolute;
+  background-color: #3651e4;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 12pt;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  height: auto;
+  width: 67%;
+  margin-left: 15%;
+  margin-top: 15px;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  width: 40%;
+  margin-left: 30%;
+}
+
+.form-container #register {
+  background: none;
+  border: none;
+  width: 100%;
+  position: absolute;
+  font-size: 15px;
+  text-align: left;
+  border: none;
+  color: #3651e4;
+  margin-top: -19px;
+  margin-left: 332px;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 0.8;
+}
+.form-container #register:hover {
+  color: rgb(92, 92, 92);
+}
+
+#weeklyTitle {
+  position: absolute;
+  top: 450px;
+  left: 200px;
+  font-size: large;
+  color: #04aa6d;
+}
+
+.RecBookpic {
+  display: block;
+  width: 800px;
+  height: 400px;
+}
+
+#RecBookcontainer:hover #recBookinfo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#bookinfo{
+  width: 600px;;
+  padding: 30px;
+}
+
+#recBookinfo {
+  position: absolute;
+  bottom: 0;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(34, 34, 34, 0.35);
+  padding: 0 0.5rem;
+  text-align: left;
+  overflow: hidden;
+  width: 700px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+#RecBookcontainer {
+  position: absolute;
+  background-color: #fff;
+  top: 500px;
+  left: 5%;
+  width: 40%;
+  height: 35%;
+  border: 5px solid #fff;
+}
+
+.book-list {
+  position: absolute;
+  left: 55%;
+  top: 300px;
+}
+
+.input-box {
+  position: absolute;
+  left: 55%;
+  top: 250px;
+}
+
+#search-box {
+  font: 16px;
+  color: rgb(59, 177, 29);
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+  border: 3px solid gray;
+}
+
+.SearchButton {
+  position: absolute;
+  top: 22.5%;
+  left: 68%;
+  background: linear-gradient(to right, #52d1c2, #1ab3a1);
+  width: 150px;
+  height: 50px;
+  margin: 20px 0;
+  font-size: 18px;
+  border: none;
+  color: #fff;
+  letter-spacing: 3px;
+  border-radius: 30px;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.SearchButton:hover {
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+}

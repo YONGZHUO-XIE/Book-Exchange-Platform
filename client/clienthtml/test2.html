@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>Social Media Icons Neon Glow Effect</title>
+<link rel="stylesheet" type="text/css" href="../clientcss/test2.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="btn fb-btn">
+            <i class="fa fa-facebook" aria-hidden="true" id="fb"></i>
+        </div>
+        <div class="btn ig-btn">
+            <i class="fa fa-instagram" aria-hidden="true" id="ig"></i>
+        </div>
+        <div class="btn tw-btn">
+            <i class="fa fa-twitter" aria-hidden="true" id="tw"></i>
+        </div>
+        <div>
+            <form onsubmit="fileSubmitHandler(event)">
+                <input type="file" name="file" id="input" onchange="fileSelectedHandler(event)">
+                <input type="submit" value="Upload"/>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="../actions/actionImage.js"></script>
+    </body>
+</html>
